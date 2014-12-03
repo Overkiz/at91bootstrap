@@ -36,6 +36,10 @@
 #include "at91kizboxmini.h"
 #endif
 
+#ifdef CONFIG_AT91KIZBOX2
+#include "at91kizbox2.h"
+#endif
+
 #ifdef CONFIG_AT91SAM9260EK
 #include "at91sam9260ek.h"
 #endif
