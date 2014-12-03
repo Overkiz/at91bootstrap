@@ -1,0 +1,12 @@
+config	CONFIG_AT91KIZBOXMINI
+	bool "at91kizboxmini"
+	select AT91SAM9X5
+	select CONFIG_DDRC
+	select ALLOW_NANDFLASH
+	select ALLOW_CPU_CLK_400MHZ
+	select ALLOW_CRYSTAL_12_000MHZ
+	select ALLOW_PIO3
+	select CPU_HAS_PMECC
+	select CONFIG_USER_HW_INIT
+	help
+	    Use the Kizbox mini board

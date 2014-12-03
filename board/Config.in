@@ -9,6 +9,7 @@ choice
 	  Select which board you want to build for
 
 source "board/at91kizbox/Config.in.board"
+source "board/at91kizboxmini/Config.in.board"
 source "board/at91sam9260ek/Config.in.board"
 source "board/at91sam9261ek/Config.in.board"
 source "board/at91sam9263ek/Config.in.board"
@@ -30,6 +31,7 @@ endchoice
 config CONFIG_BOARDNAME
 	string
 	default "at91kizbox"	if CONFIG_AT91KIZBOX
+	default "at91kizboxmini"	if CONFIG_AT91KIZBOXMINI
 	default "at91sam9rlek"	if CONFIG_AT91SAM9RLEK
 	default "at91sam9260ek"	if CONFIG_AT91SAM9260EK
 	default "at91sam9261ek"	if CONFIG_AT91SAM9261EK
