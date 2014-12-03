@@ -1,0 +1,10 @@
+config	CONFIG_AT91KIZBOX
+	bool "at91kizbox"
+	select AT91SAM9G20
+	select CONFIG_SDRAM
+	select ALLOW_NANDFLASH
+	select ALLOW_CPU_CLK_400MHZ
+	select ALLOW_CRYSTAL_18_432MHZ
+	select CONFIG_USER_HW_INIT
+	help
+	    Use the Kizbox board

@@ -8,6 +8,7 @@ choice
 	help
 	  Select which board you want to build for
 
+source "board/at91kizbox/Config.in.board"
 source "board/at91sam9260ek/Config.in.board"
 source "board/at91sam9261ek/Config.in.board"
 source "board/at91sam9263ek/Config.in.board"
@@ -28,6 +29,7 @@ endchoice
 
 config CONFIG_BOARDNAME
 	string
+	default "at91kizbox"	if CONFIG_AT91KIZBOX
 	default "at91sam9rlek"	if CONFIG_AT91SAM9RLEK
 	default "at91sam9260ek"	if CONFIG_AT91SAM9260EK
 	default "at91sam9261ek"	if CONFIG_AT91SAM9261EK
@@ -120,6 +122,7 @@ config SAMA5D4
 
 config CONFIG_MACH_TYPE
 	string
+	default "0xA6D"	if AT91SAM9G20 && CONFIG_AT91KIZBOX
 	default "1099"	if AT91SAM9260
 	default "0x350"	if AT91SAM9261
 	default "0x4B2"	if AT91SAM9263
