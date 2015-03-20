@@ -141,6 +141,31 @@ config CONFIG_MACH_TYPE
 	default "9999"	if SAMA5D4
 	help
 
+menu "NandFlash Version"
+	depends on ALLOW_NANDFLASH
+
+config CONFIG_NANDFLASH_SOFTWARE_VERSION_MAJOR
+	string "NandFlash Major Software Version"
+	default "9999999"
+	help
+	  The NandFlash major software version.
+	  This string consists of 7 numerical digits.
+	  It is board specific.
+
+config CONFIG_NANDFLASH_SOFTWARE_VERSION_MINOR
+	string "NandFlash Minor Software Version
+	default "X"
+	help
+	  The NandFlash minor software version.
+	  This version is an alphabetical character in uppercase.
+	  It starts from A for first release.
+
+	  The minor version X is reserved for prototypes.
+	  X minor version can also be followed by two numerical digits.
+	  Example: X, X01, X02...
+
+endmenu
+
 config CONFIG_LINK_ADDR
 	string
 	default "0x200000" if AT91SAM9260 || AT91SAM9G20 || SAMA5D4
