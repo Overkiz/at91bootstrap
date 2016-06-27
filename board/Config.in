@@ -243,6 +243,7 @@ config CONFIG_NANDFLASH_SOFTWARE_VERSION_MAJOR
 
 source "board/at91kizbox/Config.in.nandflash_sv"
 source "board/at91kizboxmini/Config.in.nandflash_sv"
+source "board/at91kizbox2/Config.in.nandflash_sv"
 
 	default "9999999"
 	help
