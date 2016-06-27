@@ -12,6 +12,7 @@ config CONFIG_LINUX_KERNEL_ARG_STRING
 	string "Linux kernel command-line"
 source "board/at91kizbox/Config.in.linux_arg"
 source "board/at91kizboxmini/Config.in.linux_arg"
+source "board/at91kizbox2/Config.in.linux_arg"
 source "board/at91sam9261ek/Config.in.linux_arg"
 source "board/at91sam9263ek/Config.in.linux_arg"
 source "board/at91sam9g10ek/Config.in.linux_arg"
