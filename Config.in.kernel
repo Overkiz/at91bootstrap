@@ -10,6 +10,7 @@ config CONFIG_OVERRIDE_CMDLINE
 config CONFIG_LINUX_KERNEL_ARG_STRING
 	depends on CONFIG_LOAD_LINUX
 	string "Linux kernel command-line"
+source "board/at91kizbox/Config.in.linux_arg"
 source "board/at91sam9261ek/Config.in.linux_arg"
 source "board/at91sam9263ek/Config.in.linux_arg"
 source "board/at91sam9g10ek/Config.in.linux_arg"

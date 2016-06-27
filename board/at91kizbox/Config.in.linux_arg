@@ -1,0 +1,2 @@
+config CONFIG_LINUX_KERNEL_ARG_STRING
+	default "ubi.mtd=ubi" if CONFIG_AT91KIZBOX
