@@ -240,6 +240,9 @@ menu "NandFlash Version"
 
 config CONFIG_NANDFLASH_SOFTWARE_VERSION_MAJOR
 	string "NandFlash Major Software Version"
+
+source "board/at91kizbox/Config.in.nandflash_sv"
+
 	default "9999999"
 	help
 	  The NandFlash major software version.
