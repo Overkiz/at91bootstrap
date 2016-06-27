@@ -8,6 +8,9 @@ choice
 	help
 	  Select which board you want to build for
 
+source "board/at91kizbox/Config.in.board"
+source "board/at91kizboxmini/Config.in.board"
+source "board/at91kizbox2/Config.in.board"
 source "board/at91sam9260ek/Config.in.board"
 source "board/at91sam9261ek/Config.in.board"
 source "board/at91sam9263ek/Config.in.board"
@@ -31,6 +34,9 @@ endchoice
 
 config CONFIG_BOARDNAME
 	string
+	default "at91kizbox"	if CONFIG_AT91KIZBOX
+	default "at91kizboxmini"	if CONFIG_AT91KIZBOXMINI
+	default "at91kizbox2"	if CONFIG_AT91KIZBOX2
 	default "at91sam9rlek"	if CONFIG_AT91SAM9RLEK
 	default "at91sam9260ek"	if CONFIG_AT91SAM9260EK
 	default "at91sam9261ek"	if CONFIG_AT91SAM9261EK
@@ -213,6 +219,7 @@ config SAMA5D2
 
 config CONFIG_MACH_TYPE
 	string
+	default "0xA6D"	if AT91SAM9G20 && CONFIG_AT91KIZBOX
 	default "1099"	if AT91SAM9260
 	default "0x350"	if AT91SAM9261
 	default "0x4B2"	if AT91SAM9263
@@ -227,6 +234,36 @@ config CONFIG_MACH_TYPE
 	default "9999"	if SAMA5D4
 	default "9999"	if SAMA5D2
 	help
+
+menu "NandFlash Version"
+	depends on ALLOW_NANDFLASH
+
+config CONFIG_NANDFLASH_SOFTWARE_VERSION_MAJOR
+	string "NandFlash Major Software Version"
+
+source "board/at91kizbox/Config.in.nandflash_sv"
+source "board/at91kizboxmini/Config.in.nandflash_sv"
+source "board/at91kizbox2/Config.in.nandflash_sv"
+
+	default "9999999"
+	help
+	  The NandFlash major software version.
+	  This string consists of 7 numerical digits.
+	  It is board specific.
+
+config CONFIG_NANDFLASH_SOFTWARE_VERSION_MINOR
+	string "NandFlash Minor Software Version
+	default "X"
+	help
+	  The NandFlash minor software version.
+	  This version is an alphabetical character in uppercase.
+	  It starts from A for first release.
+
+	  The minor version X is reserved for prototypes.
+	  X minor version can also be followed by two numerical digits.
+	  Example: X, X01, X02...
+
+endmenu
 
 config CONFIG_LINK_ADDR
 	string

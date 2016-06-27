@@ -28,6 +28,18 @@
 #ifndef __BOARD_H__
 #define __BOARD_H__
 
+#ifdef CONFIG_AT91KIZBOX
+#include "at91kizbox.h"
+#endif
+
+#ifdef CONFIG_AT91KIZBOXMINI
+#include "at91kizboxmini.h"
+#endif
+
+#ifdef CONFIG_AT91KIZBOX2
+#include "at91kizbox2.h"
+#endif
+
 #ifdef CONFIG_AT91SAM9260EK
 #include "at91sam9260ek.h"
 #endif
